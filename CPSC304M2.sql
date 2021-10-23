@@ -35,14 +35,14 @@ CREATE TABLE Person (
 CREATE TABLE Camper (
   sinNum Integer PRIMARY KEY,
   shelterType char(50),
-  FOREIGN KEY (sinNum) REFERENCES Person
+  FOREIGN KEY (sinNum) REFERENCES Person ON DELETE CASCADE
 ); 
 
 CREATE TABLE Hiker (
   sinNum Integer PRIMARY KEY,
   experienceLevel Integer,
   firstAidCert Integer,
-  FOREIGN KEY (sinNum) REFERENCES Person
+  FOREIGN KEY (sinNum) REFERENCES Person ON DELETE CASCADE
 );
 
 CREATE TABLE Park (
@@ -54,27 +54,27 @@ CREATE TABLE Park (
 CREATE TABLE Provincial (
   coords char(20) PRIMARY KEY,
   dayFee Integer,
-  FOREIGN KEY (coords) REFERENCES Park
+  FOREIGN KEY (coords) REFERENCES Park ON DELETE CASCADE
 );
 
 CREATE TABLE National (
   coords char(20) PRIMARY KEY,
   membershipProgram char(50),
-  FOREIGN KEY (coords) REFERENCES Park
+  FOREIGN KEY (coords) REFERENCES Park ON DELETE CASCADE
 );
 
 CREATE TABLE DayTrips (
   tripID char(20) PRIMARY KEY,
   coords char(20),
   tripDate date NOT NULL,
-  FOREIGN KEY (coords) REFERENCES Park
+  FOREIGN KEY (coords) REFERENCES Park ON DELETE CASCADE
 );
 
 CREATE TABLE ViewPoints (
   viewpointName char(50) PRIMARY KEY,
   coords char(20),
   category char(20) NOT NULL,
-  FOREIGN KEY (coords) REFERENCES Park
+  FOREIGN KEY (coords) REFERENCES Park ON DELETE CASCADE
 );
 
 CREATE TABLE Lakes (
@@ -83,7 +83,7 @@ CREATE TABLE Lakes (
   elevation Integer,
   areaSize Integer,
   lakeName char(50) NOT NULL,
-  FOREIGN KEY (coords) REFERENCES Park
+  FOREIGN KEY (coords) REFERENCES Park ON DELETE CASCADE
 );
 
 CREATE TABLE DistElevDur (
@@ -128,10 +128,11 @@ CREATE TABLE ToiletsShowers (
 );
 
 CREATE TABLE Campground (
-  campgroundName char(20) PRIMARY KEY,
+  campgroundName char(20),
   coords char(20), 
   campType char(20) NOT NULL,
   numWaterSources Integer NOT NULL,
+  PRIMARY KEY (campgroundName, campType),
   FOREIGN KEY (coords) REFERENCES Park ON DELETE CASCADE,
   FOREIGN KEY (campType) REFERENCES CampgroundType ON DELETE CASCADE,
   FOREIGN KEY (numWaterSources) REFERENCES WaterToilets ON DELETE CASCADE
@@ -144,9 +145,9 @@ CREATE TABLE HikingTrip (
   trailName char(50),
   hikeDate date NOT NULL,
   duration Integer,
-  FOREIGN KEY (sinNum) REFERENCES Person,
-  FOREIGN KEY (trailName) REFERENCES Trails,
-  FOREIGN KEY (coords) REFERENCES Park
+  FOREIGN KEY (sinNum) REFERENCES Person ON DELETE CASCADE,
+  FOREIGN KEY (trailName) REFERENCES Trails ON DELETE CASCADE,
+  FOREIGN KEY (coords) REFERENCES Park ON DELETE CASCADE
 );
 
 CREATE TABLE Reservation (
@@ -157,9 +158,9 @@ CREATE TABLE Reservation (
   campgroundName char(20),
   campType char(50),
   depDate date NOT NULL,
-  FOREIGN KEY (campgroundName) REFERENCES Campground,
-  FOREIGN KEY (campType) REFERENCES CampgroundType,
-  FOREIGN KEY (sinNum) REFERENCES Person
+  FOREIGN KEY (campgroundName, campType) REFERENCES Campground ON DELETE CASCADE,
+  FOREIGN KEY (campType) REFERENCES CampgroundType ON DELETE CASCADE,
+  FOREIGN KEY (sinNum) REFERENCES Person ON DELETE CASCADE
 );
 
 INSERT INTO Person (sinNum, personAge, personName)
