@@ -1,4 +1,6 @@
+
 <html>
+
 
 <head>
     <link rel="stylesheet" href="style.php">
@@ -6,21 +8,21 @@
 
 <body>
     <h2>Park Administrator View</h2>
-    <div>
-        <h3>Show Tables</h3>
+    <h3>Show Tables</h3>
+    <div class="admin_table_buttons">
         <form method="GET" action="outdoor-db.php">
             <input type="hidden" id="showPersonTable" name="showPersonTable">
-            <input type="submit" value="Persons" name="showPersonTable"></p>
+            <input class="table_button" type="submit" value="Persons" name="showPersonTable"></p>
         </form>
 
         <form method="GET" action="outdoor-db.php">
             <input type="hidden" id="showHikerTable" name="showHikerTable">
-            <input type="submit" value="Hikers" name="showHikerTable"></p>
+            <input class="table_button" type="submit" value="Hikers" name="showHikerTable"></p>
         </form>
 
         <form method="GET" action="outdoor-db.php">
             <input type="hidden" id="showCamperTable" name="showCamperTable">
-            <input type="submit" value="Campers" name="showCamperTable"></p>
+            <input class="table_button" type="submit" value="Campers" name="showCamperTable"></p>
         </form>
     </div>
 
@@ -47,8 +49,8 @@
 
     function printPerson($result)
     { //prints results from a select statement
-        echo "<br>Persons Table:<br>";
-        echo "<table>";
+        echo "<table class=admin_table>";
+        echo "<caption style='text-align:center'>Person Table</caption>";
         echo "<tr><th>SIN</th><th>Name</th><th>Age</th></tr>";
 
         while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
@@ -60,8 +62,8 @@
 
     function printHikers($result)
     {
-        echo "<br>Hikers Table:<br>";
-        echo "<table>";
+        echo "<table class=admin_table>";
+        echo "<caption style='text-align:center'>Hiker Table</caption>";
         echo "<tr><th>Name</th><th>ExperienceLevel</th><th>FirstAidCert</th></tr>";
 
         while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
@@ -73,8 +75,8 @@
 
     function printCampers($result)
     {
-        echo "<br>Camper Table:<br>";
-        echo "<table>";
+        echo "<table class=admin_table>";
+        echo "<caption style='text-align:center'>Camper Table</caption>";
         echo "<tr><th>Name</th><th>ShelterType</th></tr>";
 
         while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
