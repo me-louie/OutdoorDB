@@ -2,27 +2,180 @@
 header("Content-type: text/css");
 $font_family = 'Arial, Helvetica, sans-serif';
 $font_size = '1em';
-$border = '1px solid';
+$std_border = '1px solid';
+$dash_border = '1px dashed';
+$border_base = '3px solid';
+$bg_image = "./content/images/bg-pano.jpeg";
+$bg_image_mobile = "./content/images/bg-pano-mobile.jpeg";
+$light_grey = "#f3f3f3f3";
+$header_teal = "#2A9D8F";
 
 ?>
 
-table {
-margin: 20px;
+body {
+    font-family: <?= $font_family ?>;
+    background-image: url(<?= $bg_image ?>);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    max-width: 640px;
+    margin: auto;
+    align-items: center;
+    color: white;
+    padding-top: 10%;
 }
 
-th {
-font-family: <?= $font_family ?>;
-font-size: <?= $font_size ?>;
-background: #666;
-color: #FFF;
-padding: 2px 6px;
-border-collapse: separate;
-border: <?= $border ?> #000;
+
+body::after {
+    content: "";
+    background: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+section.view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0,0,0, 0.7);
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+table.admin_table{
+    margin: 20px;
+    border-collapse: collapse;
+    min-width: 80%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background: white;
+    border: 0;
+    border-radius: 50x 50px 0 0;
+    overflow: hidden;
+}
+
+th, caption {
+    font-family: <?= $font_family ?>;
+    font-size: <?= $font_size ?>;
+    background: <?= $header_teal ?>;
+    color: #FFF;
+    padding: 0.5rem 0.6rem;
+    border-collapse: separate;
+    border-bottom: <?= $dash_border?> #FFF;
 }
 
 td {
-font-family: <?= $font_family ?>;
-font-size: <?= $font_size ?>;
-border: <?= $border ?> #DDD;
-padding: 0.3rem;
+    font-family: <?= $font_family ?>;
+    font-size: <?= $font_size ?>;
+    border-bottom: <?= $std_border ?> #DDD;
+    padding: 1rem 1.05rem;
+    color: grey;
+    text-align: center;
+}
+
+tr:nth-of-type(even) {
+    background:  <?= $light_grey ?>;
+}
+tr:last-of-type {
+    border-bottom: <?= $border_base ?> <?= $header_teal ?>;
+}
+
+form, div.admin_table_buttons, section.input_container {
+    display: flex;
+    flex-direction: rows;
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.table_button {
+    display: inline;
+    font-size: 20px;
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.create_button {
+    display: flex;
+    font-size: 30px;
+    margin: auto;
+}
+
+form.add_user_box {
+    display: inline-block;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+form.add_user_box>* {
+    flex: 1 1 2rem;
+}
+
+input.field, label {
+    display: flex;
+    flex-direction: rows;
+    width: 90%;
+    margin: auto;
+}
+
+input.field {
+    height: 50%;
+    margin-bottom: 1rem;
+}
+
+label {
+    margin-bottom: 0.5rem;
+}
+
+
+/* Hide spinners/arrows on number i */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+-moz-appearance: textfield;
+}
+
+/* Mobile Media Queries */
+@media only screen and (max-width: 768px) {
+    body {
+        max-width: 90%;
+        background-image: url(<?= $bg_image_mobile ?>);
+        background-position: center;
+    }
+
+    div.admin_table_buttons, form {
+        width: 90%;
+    }    
+
+    section.input_container {
+        width: 100%;
+    }
+
+    .table_button {
+        font-size: 20px;
+        width: 90%;
+        height: 50px;
+    }
+}
+
+/* Smaller Mobile Devices */
+@media only screen and (max-width: 480px) {
+    .table_button {
+        font-size: 17px;
+        width: 90%;
+        height: 50px;
+    }
 }
