@@ -1,0 +1,52 @@
+Breakdown of Timeline/Tasks
+Week of November 1st:
+Create script to generate tables and data (Lauren/Thomas - Completed as part of Milestone 2)
+Set-up PHP boiler-plate for project (Mikayla - Completed)
+
+Week of November 8th: 
+Create basic GUI for Hiker/Camper view
+Render relevant tables [Selection/Projection/Join]
+Allow hikers to add/edit/remove statistics about their hikes/day trips/camping trips/reservations [Insert/Update/Delete]
+Allow people to write queries about different features within parks [Join/Division/Aggregation]
+e.g. find all parks with lakes and trails greater than 10km in length, etc.
+User should be able to make (complex) queries regarding [Selection/Projection/Join/Aggregation/Division]:
+Parks (Provincial, National, Other)
+Their own day trips, hiking trips, and reservations
+Viewpoints, lakes, trails
+Campgrounds and related amenities
+
+
+Create basic GUI for Park Administrator view
+Render relevant tables [Selection/Projection/Join]
+Allow Park Administrator to have write access to relevant tables [Insert/Update/Delete]
+Parks (Provincial, National, Other)
+Viewpoints, lakes, trails
+Campgrounds and related amenities
+Allow Park Administrator to make make complex queries [Aggregation/Division]
+
+Implement basic queries and related UI components
+Insert  (Lauren)
+Delete  (Lauren)
+Update (Thomas) 
+Selection  (Mikayla)
+Projection (Mikayla)
+
+Week of November 15th:
+Implement complex queries and related UI components
+Join (Mikayla)
+Aggregation with Group By  (Thomas)
+Aggregation with Having (Lauren)
+Nested Aggregation with Group By (Thomas)
+Division (Thomas)
+Add UI features (eg. dropdrop menu) to allow for complex queries 
+
+Week of November 21st:
+Finalize SQL script which creates all tables/data in database (Mikayla)
+Finalize PDF summary of project description and what was accomplished (Thomas)
+Finalize project README (Lauren)
+
+Description of Challenges 
+We have not dealt with view creation yet with SQL Plus and anticipate there may be issues we have not foreseen with utilizing different views/pages for Park Administration/Park User with PHP. Other challenges related this may be:
+Constraining a particular user to only viewing their own data
+Constraining a particular user to only deleting/modifying their own data
+We have not yet decided how we will perform input sanitization and if we will do validation with PHP in-browser or using triggers on the database side. For example, we might want to constrain a user’s Social Insurance Number to 9 digits.
