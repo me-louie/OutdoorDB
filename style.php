@@ -96,10 +96,11 @@ form, div.admin_table_buttons, section.input_container {
 .table_button {
     display: inline;
     font-size: 20px;
-    width: 80%;
+    width: 100%;
     height: 50%;
     margin: auto;
     margin-bottom: 1rem;
+    margin-inline: 0.5rem;
     text-align: center;
 }
 
@@ -133,6 +134,11 @@ input.field {
 
 label {
     margin-bottom: 0.5rem;
+}
+filter {
+    display:flex;
+    flex-direction: column;
+    margin: auto;
 }
 
 
