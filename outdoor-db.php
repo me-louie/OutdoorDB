@@ -13,6 +13,7 @@
     <section class="view">
         <?php
         include 'park-user.php';
+        include 'park-user-update.php';
         ?>
     </section>
     <section class="view">
@@ -154,6 +155,9 @@
                 if (array_key_exists('showCampgroundTable', $_POST)) {
                     handleshowCampgroundTable();
                 }
+                if (array_key_exists('update-sin', $_POST)) {
+                    handleUpdateUserRequest();
+                }
 
                 disconnectFromDB();
             }
@@ -162,6 +166,7 @@
         if (
             isset($_POST['add-user-submit'])
             || isset($_POST['showCampgroundTable'])
+            || isset($_POST['update-user-submit'])
         ) {
             handlePOSTRequest();
         } else if (

@@ -18,7 +18,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    max-width: 640px;
+    max-width: 960px;
     margin: auto;
     align-items: center;
     color: white;
@@ -84,10 +84,9 @@ tr:last-of-type {
     border-bottom: <?= $border_base ?> <?= $header_teal ?>;
 }
 
-form, div.admin_table_buttons, section.input_container {
+form, div.admin_table_buttons, section.input_container, .input_container_update {
     display: flex;
     flex-direction: rows;
-    width: 80%;
     height: 50%;
     margin: auto;
     margin-bottom: 1rem;
@@ -104,7 +103,7 @@ form, div.admin_table_buttons, section.input_container {
     text-align: center;
 }
 
-.create_button {
+.create_button, .update_button {
     display: flex;
     font-size: 30px;
     margin: auto;
@@ -120,14 +119,14 @@ form.add_user_box>* {
     flex: 1 1 2rem;
 }
 
-input.field, label {
+input.field, select.field, label, div.field_container, select {
     display: flex;
     flex-direction: rows;
-    width: 90%;
+    width: 95%;
     margin: auto;
 }
 
-input.field {
+input.field, select.field, div.field_container, select {
     height: 50%;
     margin-bottom: 1rem;
 }
@@ -164,15 +163,19 @@ input[type=number] {
 
     div.admin_table_buttons, form {
         width: 90%;
+        display: inline-block;
     }    
 
-    section.input_container {
+    section.input_container, .input_container_update {
         width: 100%;
+    }
+
+    section.input_container_update {
+        flex-wrap: wrap;
     }
 
     .table_button {
         font-size: 20px;
-        width: 90%;
         height: 50px;
     }
 }
@@ -184,4 +187,10 @@ input[type=number] {
         width: 90%;
         height: 50px;
     }
+
+    div.admin_table_buttons, form {
+        width: 90%;
+        display: inline-block;
+        align-items: center;
+    }  
 }
