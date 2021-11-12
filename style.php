@@ -50,12 +50,13 @@ section.view {
 table.admin_table{
     margin: 20px;
     border-collapse: collapse;
-    min-width: 80%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    background: white;
     border: 0;
     border-radius: 50x 50px 0 0;
-    overflow: hidden;
+    max-width: 90%;
+    overflow-x: auto;
+    display: block;
+    background: white;
 }
 
 th, caption {
