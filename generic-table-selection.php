@@ -79,7 +79,14 @@ function handleShowGenericTable($renameMap, $renameAsMap, $tablename, $constants
 
 function printGenericTable($result, $selections, $N, $tablename) {
     printGenericFiltersDispatch($tablename);
-    echo "<table class=admin_table>";
+    switch($tablename) {
+        case "campground":
+            echo "<table class=campground_table>";
+            break;
+        default:
+            echo "<table class=admin_table>";
+            break;
+    }
     echo "<caption style='text-align:center'>". strtoupper($tablename) . " TABLE </caption>";
     $headers = "<tr>";
     for ($i = 0; $i < $N; $i++) {

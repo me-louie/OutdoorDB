@@ -58,6 +58,18 @@ table.admin_table{
     overflow: hidden;
 }
 
+table.campground_table{
+    margin: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border: 0;
+    border-radius: 50x 50px 0 0;
+    max-width: 90%;
+    overflow-x: auto;
+    display: block;
+    background: white;
+}
+
 th, caption {
     font-family: <?= $font_family ?>;
     font-size: <?= $font_size ?>;
