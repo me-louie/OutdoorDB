@@ -160,6 +160,9 @@
                 if (array_key_exists('show-person-table', $_POST)) {
                     handleShowGenericTable(PERSON_RENAME_MAP, PERSON_RENAME_ASMAP, "person", PERSON_PERSISTENT_COLS);
                 }
+                if (array_key_exists('show-hike-table', $_POST)) {
+                    handleShowGenericTable(HIKE_RENAME_MAP, HIKE_RENAME_ASMAP, "hike", HIKE_PERSISTENT_COLS);
+                }
                 if (array_key_exists('update-sin', $_POST)) {
                     handleUpdateUserRequest();
                 }
@@ -171,6 +174,7 @@
             isset($_POST['add-user-submit'])
             || isset($_POST['show-campground-table'])
             || isset($_POST['show-person-table'])
+            || isset($_POST['show-hike-table'])
             || isset($_POST['update-user-submit'])
         ) {
             handlePOSTRequest();

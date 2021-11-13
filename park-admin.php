@@ -33,6 +33,11 @@
             <input class="table_button" type="submit" value="People" name="show-person-table"></p>
         </form>
 
+        <form method="POST" action="outdoor-db.php">
+            <input type="hidden" id="show-hike-table" name="show-hike-table">
+            <input class="table_button" type="submit" value="Hikes" name="show-hike-table"></p>
+        </form>
+
     </div>
 
     <?php
