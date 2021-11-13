@@ -7,10 +7,10 @@
  * we will allow filtering on (i.e. the same keys as in SELECT_OPTIONS).
  * 
  * RENAME_ASMAP is used to build the SELECT string so should contain all possible
- * columnns in the resulting join. Keys should formatted to match any attribute 
+ * columns in the resulting join. Keys should be formatted to match any attribute 
  * disambiguation that is necessary (i.e. match table aliases in the SQL query.).
  * 
- * SELECT_OPTIONS are the optins in the "Field" select drop down that the user is allowed
+ * SELECT_OPTIONS are the options in the "Field" select dropdown that the user is allowed
  * to make a WHERE selection on (e.g. Difficulty > 10).
  * 
  * CHECKBOX OPTIONS should include all columns that are not in the PERSISTENT_COLS constant.
