@@ -62,7 +62,6 @@ function handleShowGenericTable($renameMap, $renameAsMap, $tablename, $constants
         $value = $_POST["$tablename-select-value"];
         $whereString = "WHERE " . $field . " " . $operator . " " . $value;
     }
-
     // PROJECTION
     $selections = isset($_POST["$tablename-options"]) ? $_POST["$tablename-options"] : [];
     $selections = array_merge($constants, $selections);
@@ -75,6 +74,8 @@ function handleShowGenericTable($renameMap, $renameAsMap, $tablename, $constants
 
     printGenericTable($result, $selections, $N, $tablename);
 }
+
+
 
 
 function printGenericTable($result, $selections, $N, $tablename) {
