@@ -76,8 +76,6 @@ function handleShowGenericTable($renameMap, $renameAsMap, $tablename, $constants
 }
 
 
-
-
 function printGenericTable($result, $selections, $N, $tablename) {
     printGenericFiltersDispatch($tablename);
     echo "<table class=admin_table>";
