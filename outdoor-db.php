@@ -19,6 +19,7 @@
     <section class="view">
         <?php
         include 'park-admin.php';
+        include 'camp-aggregation.php';
         require("generic-table-selection.php");
         require("constants.php");
 
@@ -157,6 +158,9 @@
                 if (array_key_exists('show-campground-table', $_POST)) {
                     handleShowGenericTable(CAMPGROUND_RENAME_MAP, CAMPGROUND_RENAME_ASMAP, "campground", CAMPGROUND_PERSISTENT_COLS);
                 }
+                if (array_key_exists('campground-agg', $_POST)) {
+                    groupBy();
+                }
                 if (array_key_exists('show-person-table', $_POST)) {
                     handleShowGenericTable(PERSON_RENAME_MAP, PERSON_RENAME_ASMAP, "person", PERSON_PERSISTENT_COLS);
                 }
@@ -176,6 +180,7 @@
             || isset($_POST['show-person-table'])
             || isset($_POST['show-hike-table'])
             || isset($_POST['update-user-submit'])
+            || isset($_POST['campground-agg'])
         ) {
             handlePOSTRequest();
         } else if (

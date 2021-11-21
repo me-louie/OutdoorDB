@@ -318,49 +318,61 @@ INSERT INTO HikingTrip (hikingTripID, coords, sinNum, trailName, hikeDate, durat
 VALUES ('NHDYSH','23.40338, 3.17403', 120340562, 'rough trail', TO_DATE('2017-12-11', 'yyyy-mm-dd'), 65);
 
 INSERT INTO ToiletsShowers (numToilets, numShowers)
-VALUES (10, 12);
+VALUES (10, 3);
 INSERT INTO ToiletsShowers (numToilets, numShowers)
-VALUES (11, 6);
+VALUES (11, 3);
 INSERT INTO ToiletsShowers (numToilets, numShowers)
-VALUES (12, 5);
+VALUES (5, 1);
 INSERT INTO ToiletsShowers (numToilets, numShowers)
-VALUES (30, 23);
+VALUES (8, 2);
 INSERT INTO ToiletsShowers (numToilets, numShowers)
-VALUES (23, 13);
+VALUES (0, 0);
 
 
 INSERT INTO WaterToilets (numWaterSources, numToilets)
 VALUES (4,10);
 INSERT INTO WaterToilets (numWaterSources, numToilets)
-VALUES (6,11);
+VALUES (6, 11);
 INSERT INTO WaterToilets (numWaterSources, numToilets)
-VALUES (7,12);
+VALUES (7, 8);
 INSERT INTO WaterToilets (numWaterSources, numToilets)
-VALUES (8,30);
+VALUES (0, 0);
 INSERT INTO WaterToilets (numWaterSources, numToilets)
-VALUES (10,23);
+VALUES (5, 5);
 
 INSERT INTO CampgroundType (CampType, DogsAllowed, NumSites)
-VALUES ('Front Country', 1, 322);
+VALUES ('Front Country', 1, 120);
 INSERT INTO CampgroundType (CampType, DogsAllowed, NumSites)
-VALUES ('Back Country', 0, 455);
+VALUES ('Back Country', 0, 30);
 INSERT INTO CampgroundType (CampType, DogsAllowed, NumSites)
 VALUES ('RV', 1, 43);
 INSERT INTO CampgroundType (CampType, DogsAllowed, NumSites)
-VALUES ('Canoe Country', 0, 322);
+VALUES ('Canoe Country', 0, 5);
 INSERT INTO CampgroundType (CampType, DogsAllowed, NumSites)
-VALUES ('Glacier Camp', 0, 122);
+VALUES ('Glacier Camp', 0, 8);
 
 INSERT INTO Campground (CampType, numWaterSources, CampgroundName, Coords)
 VALUES ('Front Country', 4, 'Golden Ears', '41.40338, 4.17403');
 INSERT INTO Campground (CampType, numWaterSources, CampgroundName, Coords)
+VALUES ('Front Country', 4, 'Gold Creek', '49.40338, 6.17403');
+INSERT INTO Campground (CampType, numWaterSources, CampgroundName, Coords)
 VALUES ('Back Country', 6, 'Silver Ears', '45.40338, 2.17403');
+INSERT INTO Campground (CampType, numWaterSources, CampgroundName, Coords)
+VALUES ('Back Country', 0, 'Clouds Rest', '49.40338, 6.17403');
 INSERT INTO Campground (CampType, numWaterSources, CampgroundName, Coords)
 VALUES ('RV', 7, 'Chartreuse Ears','47.40338, 3.17403');
 INSERT INTO Campground (CampType, numWaterSources, CampgroundName, Coords)
-VALUES ('Canoe Country', 8, 'Purple Ears', '49.40338, 6.17403');
+VALUES ('Canoe Country', 5, 'Purple Ears', '49.40338, 6.17403');
 INSERT INTO Campground (CampType, numWaterSources, CampgroundName, Coords)
-VALUES ('Glacier Camp', 10, 'Orange Ears', '30.40338, 7.17403');
+VALUES ('Canoe Country', 0, 'Granite Falls', '49.40338, 6.17403');
+INSERT INTO Campground (CampType, numWaterSources, CampgroundName, Coords)
+VALUES ('Canoe Country', 6, 'Widegeon Falls', '41.40338, 4.17403');
+INSERT INTO Campground (CampType, numWaterSources, CampgroundName, Coords)
+VALUES ('Glacier Camp', 7, 'Orange Ears', '30.40338, 7.17403');
+INSERT INTO Campground (CampType, numWaterSources, CampgroundName, Coords)
+VALUES ('Glacier Camp', 4, 'Joffre Lake', '30.40338, 7.17403');
+INSERT INTO Campground (CampType, numWaterSources, CampgroundName, Coords)
+VALUES ('Glacier Camp', 6, 'Black Tusk', '30.40338, 7.17403');
 
 INSERT INTO Reservation (confirmationID, sinNum, campgroundName, arrivalDate, depDate, siteID)
 VALUES ('aaaa123545', 120340560, 'Golden Ears', TO_DATE('2015-07-13', 'yyyy-mm-dd'), TO_DATE('2015-07-20', 'yyyy-mm-dd'), 3534);
