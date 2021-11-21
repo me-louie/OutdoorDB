@@ -133,18 +133,7 @@
         function handleGETRequest()
         {
             if (connectToDB()) {
-                if (array_key_exists('showPersonTable', $_GET)) {
-                    showPersonTable();
-                }
-
-                if (array_key_exists('showHikerTable', $_GET)) {
-                    showHikerTable();
-                }
-
-                if (array_key_exists('showCamperTable', $_GET)) {
-                    showCamperTable();
-                }
-
+               /** handle any GET requests */
                 disconnectFromDB();
             }
         }
@@ -167,6 +156,36 @@
                 if (array_key_exists('show-hike-table', $_POST)) {
                     handleShowGenericTable(HIKE_RENAME_MAP, HIKE_RENAME_ASMAP, "hike", HIKE_PERSISTENT_COLS);
                 }
+                if (array_key_exists('show-hikingtrip-table', $_POST)) {
+                    handleShowGenericTable(HIKINGTRIP_RENAME_MAP, HIKINGTRIP_RENAME_ASMAP, "hikingtrip", HIKINGTRIP_PERSISTENT_COLS);
+                }
+                if (array_key_exists('show-reservation-table', $_POST)) {
+                    handleShowGenericTable(RESERVATION_RENAME_MAP, RESERVATION_RENAME_ASMAP, "reservation", RESERVATION_PERSISTENT_COLS);
+                }
+                if (array_key_exists('show-park-table', $_POST)) {
+                    handleShowGenericTable(PARK_RENAME_MAP, PARK_RENAME_ASMAP, "park", PARK_PERSISTENT_COLS);
+                }
+                if (array_key_exists('show-provincialpark-table', $_POST)) {
+                    handleShowGenericTable(PROV_RENAME_MAP, PROV_RENAME_ASMAP, "provincialpark", PROV_PERSISTENT_COLS);
+                }
+                if (array_key_exists('show-nationalpark-table', $_POST)) {
+                    handleShowGenericTable(NAT_RENAME_MAP, NAT_RENAME_ASMAP, "nationalpark", NAT_PERSISTENT_COLS);
+                }
+                if (array_key_exists('show-camper-table', $_POST)) {
+                    handleShowGenericTable(CAMPER_RENAME_MAP, CAMPER_RENAME_ASMAP, "camper", CAMPER_PERSISTENT_COLS);
+                }
+                if (array_key_exists('show-hiker-table', $_POST)) {
+                    handleShowGenericTable(HIKER_RENAME_MAP, HIKER_RENAME_ASMAP, "hiker", HIKER_PERSISTENT_COLS);
+                }
+                if (array_key_exists('show-viewpoint-table', $_POST)) {
+                    handleShowGenericTable(VIEWPOINT_RENAME_MAP, VIEWPOINT_RENAME_ASMAP, "viewpoint", VIEWPOINT_PERSISTENT_COLS);
+                }
+                if (array_key_exists('show-lake-table', $_POST)) {
+                    handleShowGenericTable(LAKE_RENAME_MAP, LAKE_RENAME_ASMAP, "lake", LAKE_PERSISTENT_COLS);
+                }
+                if (array_key_exists('show-daytrip-table', $_POST)) {
+                    handleShowGenericTable(DAYTRIP_RENAME_MAP, DAYTRIP_RENAME_ASMAP, "daytrip", DAYTRIP_PERSISTENT_COLS);
+                }
                 if (array_key_exists('update-sin', $_POST)) {
                     handleUpdateUserRequest();
                 }
@@ -179,15 +198,21 @@
             || isset($_POST['show-campground-table'])
             || isset($_POST['show-person-table'])
             || isset($_POST['show-hike-table'])
+            || isset($_POST['show-hikingtrip-table'])
+            || isset($_POST['show-reservation-table'])
+            || isset($_POST['show-park-table'])
+            || isset($_POST['show-provincialpark-table'])
+            || isset($_POST['show-nationalpark-table'])
+            || isset($_POST['show-camper-table'])
+            || isset($_POST['show-hiker-table'])
+            || isset($_POST['show-viewpoint-table'])
+            || isset($_POST['show-lake-table'])
+            || isset($_POST['show-daytrip-table'])
             || isset($_POST['update-user-submit'])
             || isset($_POST['campground-agg'])
         ) {
             handlePOSTRequest();
-        } else if (
-            isset($_GET['showPersonTable'])
-            || isset($_GET['showHikerTable'])
-            || isset($_GET['showCamperTable'])
-        ) {
+        } else if (false) { // stub 
             handleGETRequest();
         }
         ?>
