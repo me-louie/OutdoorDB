@@ -14,12 +14,14 @@
         <?php
         include 'park-user.php';
         include 'park-user-update.php';
+        include 'park-user-delete.php';
         ?>
     </section>
     <section class="view">
         <?php
         include 'park-admin.php';
         include 'camp-aggregation.php';
+        include 'aggregation_having.php';
         require("generic-table-selection.php");
         require("constants.php");
 
@@ -109,7 +111,7 @@
 
             // Your username is ora_(CWL_ID) and the password is a(student number). For example, 
             // ora_platypus is the username and a12345678 is the password.
-            $db_conn = OCILogon("ora_melouie", "a67247544", "dbhost.students.cs.ubc.ca:1522/stu");
+            $db_conn = OCILogon("ora_kerk0100", "a18186940", "dbhost.students.cs.ubc.ca:1522/stu");
 
             if ($db_conn) {
                 debugAlertMessage("Database is Connected");
@@ -161,6 +163,9 @@
                 if (array_key_exists('campground-agg', $_POST)) {
                     groupBy();
                 }
+                if (array_key_exists('campground-agg-having', $_POST)) {
+                    byHaving();
+                }
                 if (array_key_exists('show-person-table', $_POST)) {
                     handleShowGenericTable(PERSON_RENAME_MAP, PERSON_RENAME_ASMAP, "person", PERSON_PERSISTENT_COLS);
                 }
@@ -169,6 +174,9 @@
                 }
                 if (array_key_exists('update-sin', $_POST)) {
                     handleUpdateUserRequest();
+                }
+                if (array_key_exists('delete-sin', $_POST)) {
+                    handleDeleteUserRequest();
                 }
                 disconnectFromDB();
             }
@@ -180,7 +188,9 @@
             || isset($_POST['show-person-table'])
             || isset($_POST['show-hike-table'])
             || isset($_POST['update-user-submit'])
+            || isset($_POST['delete-user-submit'])
             || isset($_POST['campground-agg'])
+            || isset($_POST['campground-agg-having'])
         ) {
             handlePOSTRequest();
         } else if (
