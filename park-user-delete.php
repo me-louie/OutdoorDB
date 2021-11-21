@@ -31,8 +31,7 @@
         }
 
         /**
-         * Execute the required UPDATE commands to make all changes. 
-         * May be required to execute UPDATE for more than one table.
+         * Execute the required DELETE ON CASCADE
          */
         function handleDeleteUserRequest()
         {

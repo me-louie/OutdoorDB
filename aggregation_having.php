@@ -13,7 +13,6 @@
         ON c.numWaterSources=wt.numWaterSources
         INNER JOIN toiletsShowers ts
         ON wt.numToilets=ts.numToilets
-        WHERE wt.numToilets > 5
         GROUP BY c.campType
         HAVING COUNT(*) > 1");
     $selections = array("CAMPTYPE","NUMTOILETS");
