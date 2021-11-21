@@ -90,9 +90,7 @@ function printGenericTable($result, $selections, $N, $tablename) {
 
     $data = "<tr>";
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
-        // We always display the Campground Name and Coords columns
         $data .= "<tr>";
-        // Display the other columns per user selection
         for ($i = 0; $i < $N; $i++) {
             $data .= "<td>" . $row[$selections[$i]] . "</td>";
         }
@@ -111,6 +109,9 @@ function printGenericFiltersDispatch(string $tablename)
             break;
         case "person":
             printGenericFilters($tablename, PERSON_SELECT_OPTIONS, PERSON_CHECKBOX_OPTIONS);
+            break;
+        case "hike":
+            printGenericFilters($tablename, HIKE_SELECT_OPTIONS, HIKE_CHECKBOX_OPTIONS);
             break;
         default:
             echoFilterError();
