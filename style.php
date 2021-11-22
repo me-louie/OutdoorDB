@@ -85,12 +85,19 @@ tr:last-of-type {
     border-bottom: <?= $border_base ?> <?= $header_teal ?>;
 }
 
-form, div.admin_table_buttons, section.input_container, .input_container_update {
+form, section.input_container, .input_container_update {
     display: flex;
     flex-direction: rows;
     height: 50%;
     margin: auto;
     margin-bottom: 1rem;
+}
+
+div.admin_table_buttons {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+
 }
 
 .table_button {

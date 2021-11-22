@@ -82,7 +82,7 @@ function printGenericTable($result, $selections, $N, $tablename) {
     echo "<caption style='text-align:center'>". strtoupper($tablename) . " TABLE </caption>";
     $headers = "<tr>";
     for ($i = 0; $i < $N; $i++) {
-        $headers .= "<td>" . $selections[$i] . "</td>";
+        $headers .= "<th>" . $selections[$i] . "</th>";
     }
     $headers .= "</tr>";
     echo $headers;
@@ -111,6 +111,36 @@ function printGenericFiltersDispatch(string $tablename)
             break;
         case "hike":
             printGenericFilters($tablename, HIKE_SELECT_OPTIONS, HIKE_CHECKBOX_OPTIONS);
+            break;
+        case "hikingtrip":
+            printGenericFilters($tablename, HIKINGTRIP_SELECT_OPTIONS, HIKINGTRIP_CHECKBOX_OPTIONS);
+            break;
+        case "reservation":
+            printGenericFilters($tablename, RESERVATION_SELECT_OPTIONS, RESERVATION_CHECKBOX_OPTIONS);
+            break;
+        case "park":
+            printGenericFilters($tablename, PARK_SELECT_OPTIONS, PARK_CHECKBOX_OPTIONS);
+            break;
+        case "provincialpark":
+            printGenericFilters($tablename, PROV_SELECT_OPTIONS, PROV_CHECKBOX_OPTIONS);
+            break;
+        case "nationalpark":
+            printGenericFilters($tablename, NAT_SELECT_OPTIONS, NAT_CHECKBOX_OPTIONS);
+            break;
+        case "camper":
+            printGenericFilters($tablename, CAMPER_SELECT_OPTIONS, CAMPER_CHECKBOX_OPTIONS);
+            break;
+        case "hiker":
+            printGenericFilters($tablename, HIKER_SELECT_OPTIONS, HIKER_CHECKBOX_OPTIONS);
+            break;
+        case "viewpoint":
+            printGenericFilters($tablename, VIEWPOINT_SELECT_OPTIONS, VIEWPOINT_CHECKBOX_OPTIONS);
+            break;
+        case "lake":
+            printGenericFilters($tablename, LAKE_SELECT_OPTIONS, LAKE_CHECKBOX_OPTIONS);
+            break;
+        case "daytrip":
+            printGenericFilters($tablename, DAYTRIP_SELECT_OPTIONS, DAYTRIP_CHECKBOX_OPTIONS);
             break;
         default:
             echoFilterError();
