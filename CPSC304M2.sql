@@ -309,13 +309,33 @@ VALUES ('rough trail','23.40338, 3.17403', 60, 8900);
 INSERT INTO HikingTrip (hikingTripID, coords, sinNum, trailName, hikeDate, duration)
 VALUES ('HISHRE','44.40338, 6.17403', 120340560, 'hard trail', TO_DATE('2019-08-20', 'yyyy-mm-dd'), 2);
 INSERT INTO HikingTrip (hikingTripID, coords, sinNum, trailName, hikeDate, duration)
+VALUES ('ABCDE','44.40338, 6.17403', 112233445, 'hard trail', TO_DATE('2019-07-20', 'yyyy-mm-dd'), 6);
+INSERT INTO HikingTrip (hikingTripID, coords, sinNum, trailName, hikeDate, duration)
+VALUES ('BCDEF','44.40338, 6.17403', 120340561, 'hard trail', TO_DATE('2019-07-21', 'yyyy-mm-dd'), 4);
+INSERT INTO HikingTrip (hikingTripID, coords, sinNum, trailName, hikeDate, duration)
+VALUES ('CDEFG','44.40338, 6.17403', 120340567, 'hard trail', TO_DATE('2019-07-25', 'yyyy-mm-dd'), 4);
+
+INSERT INTO HikingTrip (hikingTripID, coords, sinNum, trailName, hikeDate, duration)
 VALUES ('HIDJSS','46.40338, 7.17403', 112233445, 'soft trail', TO_DATE('2020-09-10', 'yyyy-mm-dd'), 4);
+INSERT INTO HikingTrip (hikingTripID, coords, sinNum, trailName, hikeDate, duration)
+VALUES ('QWERT','46.40338, 7.17403', 120340560, 'soft trail', TO_DATE('2020-09-18', 'yyyy-mm-dd'), 8);
+
 INSERT INTO HikingTrip (hikingTripID, coords, sinNum, trailName, hikeDate, duration)
 VALUES ('JNUYBS','55.40338, 1.17403', 120340561, 'easy trail', TO_DATE('2020-10-12', 'yyyy-mm-dd'), 5);
 INSERT INTO HikingTrip (hikingTripID, coords, sinNum, trailName, hikeDate, duration)
+VALUES ('ASDFG','55.40338, 1.17403', 120340560, 'easy trail', TO_DATE('2020-10-14', 'yyyy-mm-dd'), 7);
+INSERT INTO HikingTrip (hikingTripID, coords, sinNum, trailName, hikeDate, duration)
+VALUES ('ZXCVB','55.40338, 1.17403', 120340562, 'easy trail', TO_DATE('2020-10-14', 'yyyy-mm-dd'), 2);
+
+INSERT INTO HikingTrip (hikingTripID, coords, sinNum, trailName, hikeDate, duration)
 VALUES ('NMBYSD', '34.40338, 2.17403',120340567, 'kind of easy trail', TO_DATE('2021-03-12', 'yyyy-mm-dd'), 3);
+
 INSERT INTO HikingTrip (hikingTripID, coords, sinNum, trailName, hikeDate, duration)
 VALUES ('NHDYSH','23.40338, 3.17403', 120340562, 'rough trail', TO_DATE('2017-12-11', 'yyyy-mm-dd'), 65);
+INSERT INTO HikingTrip (hikingTripID, coords, sinNum, trailName, hikeDate, duration)
+VALUES ('SDFGH','23.40338, 3.17403', 120340560, 'rough trail', TO_DATE('2017-12-11', 'yyyy-mm-dd'), 76);
+INSERT INTO HikingTrip (hikingTripID, coords, sinNum, trailName, hikeDate, duration)
+VALUES ('IOFGH','23.40338, 3.17403', 112233445, 'rough trail', TO_DATE('2017-12-11', 'yyyy-mm-dd'), 76);
 
 INSERT INTO ToiletsShowers (numToilets, numShowers)
 VALUES (10, 3);

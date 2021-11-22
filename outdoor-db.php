@@ -19,6 +19,7 @@
         <?php
         include 'park-admin.php';
         include 'camp-aggregation.php';
+        include 'hikingtrip-aggregation.php';
         require("generic-table-selection.php");
         require("constants.php");
 
@@ -149,6 +150,9 @@
                 if (array_key_exists('campground-agg', $_POST)) {
                     groupBy();
                 }
+                if (array_key_exists('hikingtrip-agg', $_POST)){
+                    nestedAggregation();
+                }
                 if (array_key_exists('division-sin', $_POST)) {
                     handleDivision($_POST["division-sin"]);
                 }
@@ -213,6 +217,7 @@
             || isset($_POST['update-user-submit'])
             || isset($_POST['division-user-submit'])
             || isset($_POST['campground-agg'])
+            || isset($_POST['hikingtrip-agg'])
         ) {
             handlePOSTRequest();
         } else if (false) { // stub 
