@@ -13,7 +13,6 @@
     <section class="view">
         <?php
         include 'park-user.php';
-        include 'park-user-update.php';
         include 'park-user-delete.php';
         ?>
     </section>
@@ -155,6 +154,7 @@
                 }
                 if (array_key_exists('campground-agg-having', $_POST)) {
                     byHaving();
+                }
                 if (array_key_exists('hikingtrip-agg', $_POST)){
                     nestedAggregation();
                 }
@@ -238,4 +238,3 @@
 </body>
 
 </html>
-
