@@ -13,12 +13,14 @@
     <section class="view">
         <?php
         include 'park-user.php';
+        include 'park-user-delete.php';
         ?>
     </section>
     <section class="view">
         <?php
         include 'park-admin.php';
         include 'camp-aggregation.php';
+        include 'aggregation_having.php';
         include 'hikingtrip-aggregation.php';
         require("generic-table-selection.php");
         require("constants.php");
@@ -150,6 +152,9 @@
                 if (array_key_exists('campground-agg', $_POST)) {
                     groupBy();
                 }
+                if (array_key_exists('campground-agg-having', $_POST)) {
+                    byHaving();
+                }
                 if (array_key_exists('hikingtrip-agg', $_POST)){
                     nestedAggregation();
                 }
@@ -195,6 +200,9 @@
                 if (array_key_exists('update-sin', $_POST)) {
                     handleUpdateUserRequest();
                 }
+                if (array_key_exists('delete-sin', $_POST)) {
+                    handleDeleteUserRequest();
+                }
                 disconnectFromDB();
             }
         }
@@ -215,8 +223,10 @@
             || isset($_POST['show-lake-table'])
             || isset($_POST['show-daytrip-table'])
             || isset($_POST['update-user-submit'])
+            || isset($_POST['delete-user-submit'])
             || isset($_POST['division-user-submit'])
             || isset($_POST['campground-agg'])
+            || isset($_POST['campground-agg-having'])
             || isset($_POST['hikingtrip-agg'])
         ) {
             handlePOSTRequest();

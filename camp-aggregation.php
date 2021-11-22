@@ -3,7 +3,6 @@
             <input type="hidden" id="campground-agg" name="campground-agg">
             <input type="submit" value="Group By: CampType, Sum NumWaterSources > 4" name="campground-agg"></p>
         </form>
-    </form>
 <?php
 	function groupBy() {
     $result = executePlainSql("SELECT c.campType as campType, sum(wt.numWaterSources) as numWaterSources

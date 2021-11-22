@@ -111,7 +111,7 @@ div.admin_table_buttons {
     text-align: center;
 }
 
-.create_button, .update_button {
+.create_button, .update_button, .delete_button {
     display: flex;
     font-size: 30px;
     margin: auto;
