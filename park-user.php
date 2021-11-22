@@ -24,6 +24,15 @@
         </section>
         <input class="create_button" type="submit" value="Create" name="add-user-submit">
     </form>
+    <section>
+        <?php 
+            include 'park-user-update.php';
+        ?>
+        <h4>Find all trails a user has not hiked</h4>
+        <?php 
+            include 'park-user-division.php';
+        ?>
+    </section>
 
     <?php
 

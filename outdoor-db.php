@@ -13,7 +13,6 @@
     <section class="view">
         <?php
         include 'park-user.php';
-        include 'park-user-update.php';
         ?>
     </section>
     <section class="view">
@@ -150,6 +149,9 @@
                 if (array_key_exists('campground-agg', $_POST)) {
                     groupBy();
                 }
+                if (array_key_exists('division-sin', $_POST)) {
+                    handleDivision($_POST["division-sin"]);
+                }
                 if (array_key_exists('show-person-table', $_POST)) {
                     handleShowGenericTable(PERSON_RENAME_MAP, PERSON_RENAME_ASMAP, "person", PERSON_PERSISTENT_COLS);
                 }
@@ -209,6 +211,7 @@
             || isset($_POST['show-lake-table'])
             || isset($_POST['show-daytrip-table'])
             || isset($_POST['update-user-submit'])
+            || isset($_POST['division-user-submit'])
             || isset($_POST['campground-agg'])
         ) {
             handlePOSTRequest();
