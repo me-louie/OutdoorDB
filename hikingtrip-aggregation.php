@@ -11,6 +11,7 @@ function nestedAggregation()
                 FROM HikingTrip h
                 WHERE h.duration <= all(SELECT avg(h2.duration)
                                         FROM HikingTrip h2
+                                        WHERE h.trailname = h2.trailname
                                         GROUP BY trailname)");
     $selections = array("HIKINGTRIPID", "TRAILNAME");
     printGenericTable($result, $selections, 2, "hikingtrip");
