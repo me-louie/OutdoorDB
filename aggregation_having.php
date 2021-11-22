@@ -2,7 +2,6 @@
         <form method="POST" action="outdoor-db.php">
             <input type="hidden" id="campground-agg-having" name="campground-agg-having">
             <input type="submit" value="By Having: CampType, with COUNT > 1 for numToilets" name="campground-agg-having"></p>
-        </form>
     </form>
 <?php
 	function byHaving() {
