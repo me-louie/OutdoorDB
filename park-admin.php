@@ -15,7 +15,7 @@
 
         <form method="POST" action="outdoor-db.php">
             <input type="hidden" id="show-person-table" name="show-person-table">
-            <input class="table_button" type="submit" value="All People" name="show-person-table"></p>
+            <input class="table_button" type="submit" value="Persons" name="show-person-table"></p>
         </form>
 
         <form method="POST" action="outdoor-db.php">
