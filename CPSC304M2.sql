@@ -117,14 +117,15 @@ CREATE TABLE CampgroundType(
   numSites Integer NOT NULL
 );
 
-CREATE TABLE WaterToilets (
-  numWaterSources Integer PRIMARY KEY,
-  numToilets Integer NOT NULL
-);
-
 CREATE TABLE ToiletsShowers (
   numToilets Integer PRIMARY KEY,
   numShowers Integer NOT NULL
+);
+
+CREATE TABLE WaterToilets (
+  numWaterSources Integer PRIMARY KEY,
+  numToilets Integer NOT NULL,
+  FOREIGN KEY (numToilets) REFERENCES TOILETSSHOWERS ON DELETE CASCADE
 );
 
 CREATE TABLE Campground (
