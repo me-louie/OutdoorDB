@@ -124,15 +124,15 @@ CREATE TABLE ToiletsShowers (
 
 CREATE TABLE WaterToilets (
   numWaterSources Integer PRIMARY KEY,
-  numToilets Integer NOT NULL,
+  numToilets Integer,
   FOREIGN KEY (numToilets) REFERENCES TOILETSSHOWERS ON DELETE CASCADE
 );
 
 CREATE TABLE Campground (
   campgroundName char(20),
   coords char(20), 
-  campType char(20) NOT NULL,
-  numWaterSources Integer NOT NULL,
+  campType char(20),
+  numWaterSources Integer,
   PRIMARY KEY (campgroundName, campType),
   FOREIGN KEY (coords) REFERENCES Park ON DELETE CASCADE,
   FOREIGN KEY (campType) REFERENCES CampgroundType ON DELETE CASCADE,
