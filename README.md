@@ -18,9 +18,9 @@ hiked the trail.
 *primary key*\
 **foreign key**
 
-Person(*SIN: Integer*, Age: Integer, PersonName: Char(50))\
-Camper(***SIN: Integer***, ShelterType: Char(50))\
-Hiker(***SIN: Integer***, ExperienceLevel: Integer, FirstAidCert: Integer)
+Person(*SinNum: Integer*, PersonAge: Integer, PersonName: Char(50))\
+Camper(***SinNum: Integer***, ShelterType: Char(50))\
+Hiker(***SinNum: Integer***, ExperienceLevel: Integer, FirstAidCert: Integer)
 
 Park(*Coords: Char(20)*, ParkName: Char(50), Capacity: Integer)\
 Provincial(***Coords: Char(20)***, DayFee: Integer)\
@@ -31,15 +31,15 @@ DayTrips(*TripID: Char(20)*, **Coords: Char(20)**, TripDate: Date)
 ViewPoints(*ViewPointName: Char(50)*, **Coords: Char(20)**, Category: Char(20))\
 Lakes(*LakeID: Char(20)*, **Coords: Char(20)**, Elevation: Integer, AreaSize: Integer, LakeName: Char(50))
 
-HikingTrip(*HikingTripID: Char(20)*, **SIN: Integer**, **TrailName: Char(50)**, **Coords: Char(20)**, HikeDate: Date, Duration: Integer)
+HikingTrip(*HikingTripID: Char(20)*, **Coords: Char(20)**, **SinNum: Integer**, **TrailName: Char(50)**,  HikeDate: Date, Duration: Integer)
 
-Reservation(*ConfirmationID: Char(20)*, *ArrivalDate: Date*, *SiteID: Integer*, **SIN: Integer**, **CampgroundName: Char(50)**,  **CampType: Char(50)**, DepDate: Date,)
+Reservation(*ConfirmationID: Char(20)*, *ArrivalDate: Date*, *SiteID: Integer*, **SinNum: Integer**, **CampgroundName: Char(50)**,  **CampType: Char(50)**, DepDate: Date)
 
 DistElevDur(*Distance*, *ElevationGain*, EstimatedDuration)\
 HikeDifficutly(***Distance***, ***ElevationGain***, Difficulty, MaxAltitude)\
 Trails(*TrailName*, **Distance**, **ElevationGain**, **Coords**)
 
 ToiletsShowers(*NumToilets*, NumShowers)\
-WaterToilets(*NumWaterSources*, NumToilets)\
+WaterToilets(*NumWaterSources*, **NumToilets**)\
 CampgroundType(*CampType*, DogsAllowed, NumSites)\
 Campground(*CampgroundName*, ***CampType***, **NumWaterSources**, **Coords**)
