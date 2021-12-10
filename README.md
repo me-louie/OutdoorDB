@@ -1,5 +1,3 @@
-project_q4v2b_u7v2b_w4v2b
-
 # Creators
 Thomas Cowan\
 Mikayla Louie\
